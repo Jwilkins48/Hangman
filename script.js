@@ -22,16 +22,16 @@ let alphabet;
 let guess;
 
 const createBoard = () => {
+  // DISPLAY CHOICES
   alphabet = "abcdefghijklmnopqrstuvwxyz"
     .split("")
     .map(
       (letter) => `<button id=${letter} class='alphabetBtn'>${letter}</button>`
     )
     .join("");
-  //display buttons
   alphabetContainer.innerHTML = alphabet;
-  console.log(answerSplit);
-  // DISPLAYED ANSWER
+
+  // DISPLAYED CENSORED ANSWER
   for (let i = 0; i < currentAnswer.length; i++) {
     guess = document.createElement("p");
     guess.setAttribute("id", `guess${i}`);
@@ -44,19 +44,18 @@ const createBoard = () => {
   }
 };
 
-//Change button color if correct
 alphabetContainer.addEventListener("click", (e) => {
   currentGuess = e.target.id;
   let letters = document.getElementById(e.target.id);
   Includes = answerSplit.includes(currentGuess);
   console.log(Includes);
-
+  //Change button color if correct
   if (Includes === true) {
     letters.classList.add("correct");
   } else {
     letters.classList.add("incorrect");
   }
-
+  //Reveal correct letter
   for (let i = 0; i < currentAnswer.length; i++) {
     let g = document.getElementById(`guess${i}`);
     if (answerSplit[i] === currentGuess) {

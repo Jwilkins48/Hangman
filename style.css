@@ -1,5 +1,22 @@
 body {
   background-color: #313030;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#alphabetContainer {
+  display: flex;
+  gap: 12px;
+}
+.alphabetBtn {
+  padding: 10px 15px;
 }
 
 .answerContainer {
@@ -10,7 +27,7 @@ body {
 .answerContainer {
   color: white;
   font-size: 20px;
-  padding: 20px 0 20px 0;
+  padding-bottom: 50px;
 }
 
 .hidden {
