@@ -10,6 +10,7 @@ const answers = [
 ];
 const button = document.getElementById("btn");
 const answer = document.getElementById("answer");
+const lives = document.getElementById("lives");
 const alphabetContainer = document.getElementById("alphabetContainer");
 
 let currentAnswer = answers[Math.floor(Math.random() * answers.length)];
@@ -30,11 +31,12 @@ const createBoard = () => {
     )
     .join("");
   alphabetContainer.innerHTML = alphabet;
-
+  lives.innerHTML = `Lives Remaining: ${life}`;
   // DISPLAYED CENSORED ANSWER
   for (let i = 0; i < currentAnswer.length; i++) {
     guess = document.createElement("p");
     guess.setAttribute("id", `guess${i}`);
+    guess.setAttribute("class", `guess`);
     if (answerSplit[i] !== "-") {
       guess.innerHTML = "__";
     } else {
@@ -54,6 +56,13 @@ alphabetContainer.addEventListener("click", (e) => {
     letters.classList.add("correct");
   } else {
     letters.classList.add("incorrect");
+    //Remove Life
+    if (life <= 1) {
+      alert("You Lose!");
+    } else {
+      life -= 1;
+      lives.innerHTML = `Lives Remaining: ${life}`;
+    }
   }
   //Reveal correct letter
   for (let i = 0; i < currentAnswer.length; i++) {

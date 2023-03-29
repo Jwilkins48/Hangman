@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Edu+NSW+ACT+Foundation&family=Poppins&family=Work+Sans&display=swap");
+
+/* font-family: 'Alkatra', cursive;
+font-family: 'Edu NSW ACT Foundation', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Work Sans', sans-serif; */
+
 body {
   background-color: #313030;
   margin: 0;
@@ -11,16 +18,45 @@ body {
   flex-direction: column;
 }
 
+.headerTitle {
+  color: #f28c18;
+  font-size: 38px;
+  font-family: "Alkatra", cursive;
+}
+
+.lives {
+  color: #398f11;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
 #alphabetContainer {
   display: flex;
   gap: 12px;
+  background-color: transparent;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 }
 .alphabetBtn {
-  padding: 10px 15px;
+  font-family: "Work Sans", sans-serif;
+  background-color: #6d3a9c;
+  color: #51a800;
+  font-size: 24px;
+  border-radius: 3px;
+  padding: 10px;
+  width: 40px;
+  cursor: pointer;
+}
+.guess {
+  font-family: "Work Sans", sans-serif;
 }
 
 .answerContainer {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
