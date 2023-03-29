@@ -1,0 +1,28 @@
+body {
+  background-color: #313030;
+}
+
+.answerContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.answerContainer {
+  color: white;
+  font-size: 20px;
+  padding: 20px 0 20px 0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+.revealed {
+  visibility: visible;
+}
+
+.correct {
+  background-color: green;
+}
+.incorrect {
+  background-color: red;
+}
