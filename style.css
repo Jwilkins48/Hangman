@@ -6,16 +6,19 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Work Sans', sans-serif; */
 
 body {
+  font-family: "Poppins", sans-serif;
   background-color: #313030;
   margin: 0;
 }
 
 .container {
+  box-shadow: rgba(15, 102, 37, 0.2) 0px 8px 24px;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #2e2e2e;
 }
 
 .headerTitle {
@@ -41,10 +44,14 @@ body {
 }
 .alphabetBtn {
   font-family: "Work Sans", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: #6d3a9c;
   color: #51a800;
+  display: flex;
+  justify-content: center;
   font-size: 24px;
-  border-radius: 3px;
+  border-radius: 5px;
+  border: 1px solid #6d3a9c;
   padding: 10px;
   width: 40px;
   cursor: pointer;
@@ -66,8 +73,28 @@ body {
   padding-bottom: 50px;
 }
 
+#playAgain {
+  font-family: "Work Sans", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 18px;
+  margin-top: 40px;
+  width: 8rem;
+  border: 1px solid #51a800;
+  border-radius: 5px;
+  padding: 8px;
+  background-color: #51a800;
+  cursor: pointer;
+  transition: opacity 0.6s ease-in;
+}
+#revealAnswer {
+  transition: opacity 0.6s ease-in;
+  font-size: 20px;
+  color: #999595;
+  font-weight: bold;
+}
+
 .hidden {
-  visibility: hidden;
+  opacity: 0;
 }
 .revealed {
   visibility: visible;
@@ -78,4 +105,26 @@ body {
 }
 .incorrect {
   background-color: red;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+@media (min-width: 1200px) {
+  #alphabetContainer {
+    width: 32rem;
+  }
+
+  .container {
+    box-shadow: rgba(15, 102, 37, 0.2) 0px 8px 24px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 55rem;
+    margin: auto;
+    background-color: #2e2e2e;
+  }
 }
