@@ -7,6 +7,10 @@ const answers = [
   "cauldron",
   "tombstone",
   "hocus-pocus",
+  "ghost",
+  "graveyard",
+  "cobweb",
+  "witchcraft",
 ];
 const againBtn = document.getElementById("playAgain");
 const playAgainContainer = document.getElementById("playAgain");
