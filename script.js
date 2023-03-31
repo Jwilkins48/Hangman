@@ -149,7 +149,7 @@ const draws = [
   "leftFoot",
 ];
 var step = 0;
-
+//Add next body part
 const addBody = () => {
   Draw(draws[step++]);
   if (undefined === draws[step]) this.disabled = true;
