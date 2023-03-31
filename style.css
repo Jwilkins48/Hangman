@@ -11,6 +11,10 @@ body {
   margin: 0;
 }
 
+/* .hangmanContainer {
+  height: 70rem;
+} */
+
 .container {
   box-shadow: rgba(15, 102, 37, 0.2) 0px 8px 24px;
   height: 100vh;

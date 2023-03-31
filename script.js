@@ -11,6 +11,11 @@ const answers = [
   "graveyard",
   "cobweb",
   "witchcraft",
+  "spider",
+  "phantom",
+  "witch",
+  "vampire",
+  "mummy",
 ];
 const againBtn = document.getElementById("playAgain");
 const playAgainContainer = document.getElementById("playAgain");
