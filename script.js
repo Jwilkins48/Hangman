@@ -3,7 +3,6 @@ const answers = [
   "halloween",
   "pumpkin-patch",
   "skeleton",
-  "haunted-mansion",
   "cauldron",
   "tombstone",
   "hocus-pocus",
