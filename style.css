@@ -56,6 +56,11 @@ body {
   width: 40px;
   cursor: pointer;
 }
+
+.alphabetBtn:active {
+  transform: scale(0.9);
+}
+
 .guess {
   font-family: "Work Sans", sans-serif;
 }
