@@ -160,48 +160,50 @@ const addBody = () => {
 };
 
 alphabetContainer.addEventListener("click", (e) => {
-  currentGuess = e.target.id;
-  let letters = document.getElementById(e.target.id);
-  Includes = answerSplit.includes(currentGuess);
+  if (e.target.id != "alphabetContainer") {
+    currentGuess = e.target.id;
+    let letters = document.getElementById(e.target.id);
+    Includes = answerSplit.includes(currentGuess);
 
-  //Reveal correct letter
-  for (let i = 0; i < currentAnswer.length; i++) {
-    let g = document.getElementById(`guess${i}`);
-    if (answerSplit[i] === currentGuess) {
-      g.innerHTML = currentGuess;
-      counter += 1;
-    }
-  }
-
-  const outcome = (outcome) => {
-    if (outcome === "Lose") {
-      life = 0;
-      lives.innerHTML = `Lives Remaining: ${life}`;
-      revealAnswer.innerHTML = currentAnswer;
-      revealAnswer.classList.remove("hidden");
+    //Reveal correct letter
+    for (let i = 0; i < currentAnswer.length; i++) {
+      let g = document.getElementById(`guess${i}`);
+      if (answerSplit[i] === currentGuess) {
+        g.innerHTML = currentGuess;
+        counter += 1;
+      }
     }
 
-    alphabetContainer.classList.add("disabled");
-    againBtn.classList.remove("hidden");
-  };
+    const outcome = (outcome) => {
+      if (outcome === "Lose") {
+        life = 0;
+        lives.innerHTML = `Lives Remaining: ${life}`;
+        revealAnswer.innerHTML = currentAnswer;
+        revealAnswer.classList.remove("hidden");
+      }
 
-  //Change button color if correct
-  if (Includes === true) {
-    letters.classList.add("correct");
-    if (counter === currentAnswer.length) {
-      outcome("Win");
-    }
-  } else {
-    letters.classList.add("incorrect");
-    letters.disabled = true;
-    //Remove Life
-    if (life <= 1) {
-      addBody();
-      outcome("Lose");
+      alphabetContainer.classList.add("disabled");
+      againBtn.classList.remove("hidden");
+    };
+
+    //Change button color if correct
+    if (Includes === true) {
+      letters.classList.add("correct");
+      if (counter === currentAnswer.length) {
+        outcome("Win");
+      }
     } else {
-      addBody();
-      life -= 1;
-      lives.innerHTML = `Lives Remaining: ${life}`;
+      letters.classList.add("incorrect");
+      letters.disabled = true;
+      //Remove Life
+      if (life <= 1) {
+        addBody();
+        outcome("Lose");
+      } else {
+        addBody();
+        life -= 1;
+        lives.innerHTML = `Lives Remaining: ${life}`;
+      }
     }
   }
 });
